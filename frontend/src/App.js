@@ -2,13 +2,13 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import io from 'socket.io-client';
+import { API_URL, SOCKET_URL } from './apiConfig';
 import Leaderboard from './components/Leaderboard';
 import UserControl from './components/UserControl';
 import ClaimHistory from './components/ClaimHistory';
 import './App.css';
 
-const API_URL = 'https://leaderboard-backend-0a77.onrender.com/api';
-const SOCKET_URL = 'https://leaderboard-backend-0a77.onrender.com';
+
 
 function App() {
   const [leaderboard, setLeaderboard] = useState([]);
