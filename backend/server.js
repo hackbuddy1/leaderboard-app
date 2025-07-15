@@ -20,10 +20,17 @@ const allowedOrigins = [
     "https://leaderboard-frontend-lakshya.netlify.app"
 ];
 
-app.use(cors()); // Regular API routes ke liye
+// Yeh options object ab sirf Socket.IO ke liye use hoga.
+const corsOptions = {
+  origin: allowedOrigins
+};
+
+// --- Middleware ---
+// Hum standard API calls ke liye sabhi origins ko allow kar rahe hain for maximum compatibility.
+app.use(cors()); 
 app.use(express.json());
 
-// Socket.IO ko bhi wahi options dein.
+// Socket.IO ko hum specific options denge taaki woh sirf hamari known frontends se connect ho.
 const io = new Server(server, {
   cors: corsOptions
 });
@@ -33,7 +40,7 @@ connectDB();
 app.set('socketio', io);
 app.use('/api', userRoutes);
 
-// --- Seed Users Function Definition (Yeh hissa chhoot gaya tha) ---
+// --- Seed Users Function Definition ---
 const seedUsers = async () => {
     try {
         const userCount = await User.countDocuments();
@@ -54,7 +61,7 @@ const seedUsers = async () => {
 // Ab function ko call karein
 seedUsers(); 
 
-// --- Socket.IO Connection Handling (Yeh hissa bhi zaroori hai) ---
+// --- Socket.IO Connection Handling ---
 io.on('connection', (socket) => {
   console.log('A user connected:', socket.id);
   getRankedLeaderboard().then(leaderboard => {
