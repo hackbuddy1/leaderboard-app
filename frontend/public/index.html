@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <!-- The little icon that appears in the browser tab. -->
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <!-- This tag ensures our site looks good on all devices, especially mobile. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Sets the color of the browser's address bar on mobile. -->
+    <meta name="msapplication-TileColor" content="#000000" />
+    <!-- Chrome, Edge, Safari support -->
+    <meta name="theme-color" content="#000000">
+    <!-- Firefox support -->
+    <meta name="theme-color" content="#000000" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+    <meta
+      name="description"
+      content="A real-time leaderboard application built with React and Node.js."
+    />
+    <!-- The icon for our app when saved to the home screen of an Apple device. -->
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    
+    <!--
+      The manifest.json file defines how our app should behave when installed
+      as a Progressive Web App (PWA) on a user's device.
+    -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    
+    <!--
+      --------------------------------------------------------------------
+      CUSTOM FONT IMPORT (from Google Fonts)
+      --------------------------------------------------------------------
+      We are importing the 'Inter' font to give our application a clean,
+      modern, and professional look. These three lines work together to
+      efficiently load the font from Google's servers.
+    -->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- The title that will appear in the browser tab. -->
+    <title>Leaderboard Challenge</title>
+  </head>
+  
+  <body>
+    <!-- This message is shown to users who have JavaScript disabled in their browser. -->
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    
+    <!--
+      This is the most important div in our entire application!
+      React will take over this element and inject our entire app inside it.
+    -->
+    <div id="root"></div>
+    
+    <!--
+      This HTML file is just a template shell.
+      
+      During development (`npm start`) and build (`npm run build`),
+      React will automatically inject the necessary <script> tags here
+      that contain all of our application's JavaScript code.
+    -->
+  </body>
+</html>
