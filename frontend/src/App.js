@@ -105,11 +105,11 @@ function App() {
       </div>
 
       <div className="card">
-        <div className="history-container">
+        
           <ClaimHistory />
         </div>
       </div>
-    </div>
+    
   );
 }
 

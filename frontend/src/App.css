@@ -465,3 +465,35 @@ button:disabled {
   font-weight: 500;
   color: var(--secondary-color);
 }
+
+
+
+/* Yeh style tab apply hoga jab screen ki width 768px se kam hogi (zyadatar tablets aur sabhi phones). */
+@media (max-width: 768px) {
+  
+  /* Hum history list ko thoda adjust karenge. */
+  .history-list {
+    max-height: 50vh; /* Fixed 300px ki jagah, screen ki height ka 50% use karo. Yeh zyada flexible hai. */
+    overflow-y: auto; /* Agar content zyada ho to scrollbar dikhao. */
+    padding-right: 10px; /* Scrollbar ke liye thodi jagah. */
+  }
+
+  /* Sabse zaroori change: Har history item ko aamne-saamne rakhne ki jagah, upar-neeche rakho. */
+  .history-item {
+    flex-direction: column; /* Stack items vertically */
+    align-items: flex-start; /* Align everything to the left */
+    gap: 0.5rem; /* Thodi si vertical spacing */
+  }
+
+  /* Details section ko poori width do. */
+  .history-details {
+    width: 100%;
+    justify-content: space-between; /* Points badge ko left aur timestamp ko right mein rakho. */
+  }
+
+  /* Timestamp ka font thoda chhota kar do taaki woh fit ho jaaye. */
+  .history-timestamp {
+    font-size: 0.8rem;
+    min-width: auto; /* Fixed width hata do. */
+  }
+}
