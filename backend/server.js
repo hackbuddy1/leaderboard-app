@@ -20,12 +20,7 @@ const allowedOrigins = [
     "https://leaderboard-frontend-lakshya.netlify.app"
 ];
 
-const corsOptions = {
-  origin: allowedOrigins
-};
-
-// --- Middleware ---
-app.use(cors(corsOptions)); // Regular API routes ke liye
+app.use(cors()); // Regular API routes ke liye
 app.use(express.json());
 
 // Socket.IO ko bhi wahi options dein.
